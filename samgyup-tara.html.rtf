@@ -1,0 +1,143 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+  <meta charset="UTF-8">\
+  <title>Ashley Tara Samgyup \uc0\u55357 \u56840 \u55358 \u56681 </title>\
+  <style>\
+    body \{\
+      height: 100vh;\
+      margin: 0;\
+      display: flex;\
+      flex-direction: column;\
+      justify-content: center;\
+      align-items: center;\
+      font-family: 'Comic Sans MS', 'Arial', sans-serif;\
+      background: radial-gradient(circle, #ffe6eb, #ffccd5);\
+      overflow: hidden;\
+    \}\
+\
+    h1 \{\
+      margin-bottom: 30px;\
+      color: #d6336c;\
+      text-align: center;\
+      font-size: 42px;\
+    \}\
+\
+    .buttons \{\
+      position: relative;\
+    \}\
+\
+    button \{\
+      padding: 15px 30px;\
+      font-size: 22px;\
+      border: none;\
+      border-radius: 14px;\
+      cursor: pointer;\
+      transition: all 0.3s ease;\
+    \}\
+\
+    #yesBtn \{\
+      background-color: #ff4d6d;\
+      color: white;\
+      font-size: 26px;\
+      z-index: 10;\
+    \}\
+\
+    #noBtn \{\
+      background-color: #6c757d;\
+      color: white;\
+      margin-left: 20px;\
+    \}\
+\
+    .floating \{\
+      position: absolute;\
+      font-size: 30px;\
+      animation: floatUp 3s linear forwards;\
+      pointer-events: none;\
+    \}\
+\
+    @keyframes floatUp \{\
+      0% \{ opacity: 1; transform: translateY(0); \}\
+      100% \{ opacity: 0; transform: translateY(-200px); \}\
+    \}\
+  </style>\
+</head>\
+<body>\
+\
+  <h1>Ashley, tara samgyup? \uc0\u55358 \u56681 \u55357 \u56613 </h1>\
+\
+  <div class="buttons">\
+    <button id="yesBtn" onclick="yesClicked()">LIBRE KO \uc0\u55358 \u56659 \u55357 \u56613 </button>\
+    <button id="noBtn" onclick="noClicked()">Busog na ako \uc0\u55357 \u56900 </button>\
+  </div>\
+\
+  <script>\
+    let yesSize = 26;\
+    let noClickedOnce = false;\
+\
+    const noMessages = [\
+      "Ashley\'85 sure ka? \uc0\u55357 \u56847 ",\
+      "Libre na nga eh \uc0\u55358 \u56681 ",\
+      "Wala nang takas \uc0\u55357 \u56840 ",\
+      "Gut\'f3m ka, alam ko \uc0\u55357 \u56844 ",\
+      \'93Last chance to click \'91Yes\'92 \uc0\u55358 \u56621 "\
+    ];\
+\
+    function noClicked() \{\
+      if (!noClickedOnce) \{\
+        noClickedOnce = true;\
+\
+        // Remove NO permanently\
+        document.getElementById("noBtn").remove();\
+      \}\
+\
+      // Grow YES\
+      yesSize += 35;\
+      const yesBtn = document.getElementById("yesBtn");\
+      yesBtn.style.fontSize = yesSize + "px";\
+      yesBtn.style.padding =\
+        (yesSize / 1.1) + "px " + (yesSize * 1.4) + "px";\
+\
+      // Floating guilt message\
+      const msg = document.createElement("div");\
+      msg.className = "floating";\
+      msg.style.left = Math.random() * window.innerWidth + "px";\
+      msg.style.top = Math.random() * window.innerHeight + "px";\
+      msg.innerText =\
+        noMessages[Math.floor(Math.random() * noMessages.length)];\
+      document.body.appendChild(msg);\
+\
+      setTimeout(() => msg.remove(), 3000);\
+    \}\
+\
+    function yesClicked() \{\
+      document.body.innerHTML = `\
+        <div style="\
+          display:flex;\
+          flex-direction:column;\
+          justify-content:center;\
+          align-items:center;\
+          height:100vh;\
+          background:linear-gradient(135deg,#ff4d6d,#ff758f);\
+          color:white;\
+          text-align:center;\
+        ">\
+          <h1 style="font-size:80px;">SAMGYUP CONFIRMED \uc0\u55358 \u56681 \u55357 \u56613 </h1>\
+          <p style="font-size:36px;">Ashley said YES \uc0\u55357 \u56844 \u55357 \u56470 </p>\
+          <p style="font-size:28px;">Libre ko. Walang atrasan.</p>\
+          <p style="font-size:24px;">\uc0\u55356 \u57174 \u55358 \u56659 \u55357 \u56613 \u55356 \u57174 \u55358 \u56659 \u55357 \u56613 \u55356 \u57174 \u55358 \u56659 \u55357 \u56613 </p>\
+        </div>\
+      `;\
+    \}\
+  </script>\
+\
+</body>\
+</html>\
+}
