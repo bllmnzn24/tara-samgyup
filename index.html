@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ashley Tara Samgyup 😈🥩</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+      background: #ffe6eb;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #d6336c;
+      text-align: center;
+    }
+
+    .buttons {
+      position: relative;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+      font-size: 24px;
+    }
+
+    #noBtn {
+      background-color: #adb5bd;
+      color: white;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Ashley, tara samgyup? 🥩🔥</h1>
+
+  <div class="buttons">
+    <button id="yesBtn" onclick="yesClicked()">YES 💖</button>
+    <button id="noBtn" onclick="noClicked()">No 🙄</button>
+  </div>
+
+  <script>
+    let yesSize = 24;
+
+    function noClicked() {
+      yesSize += 20;
+      const yesBtn = document.getElementById("yesBtn");
+      yesBtn.style.fontSize = yesSize + "px";
+      yesBtn.style.padding = (yesSize / 1.2) + "px " + (yesSize) + "px";
+    }
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <h1 style="font-size:60px;color:#ff4d6d;">
+          SAMGYUP CONFIRMED 🥩🔥<br>
+          Libre ko. Walang atrasan.
+	  🍖🥓🔥🍖🥓🔥🍖🥓🔥
+        </h1>
+      `;
+    }
+  </script>
+
+</body>
+</html>
